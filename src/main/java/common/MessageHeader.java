@@ -1,9 +1,12 @@
+package common;
+
 import lombok.Data;
 
 @Data
 public class MessageHeader {
-    private int version;
+
+    private int version = 1;
+    private int opCode;
     private long streamId;
-    private int code;
-    private Object data;
+
 }

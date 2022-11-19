@@ -1,8 +1,10 @@
+package server;
+
+import common.ResponseMessage;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.MessageToMessageEncoder;
 
-import javax.xml.ws.Response;
 import java.util.List;
 
 public class OrderProtocolEncoder extends MessageToMessageEncoder<ResponseMessage> {
