@@ -23,11 +23,11 @@ public class Server {
             serverBootstrap.group(boss, work);
             serverBootstrap.childHandler(new ChannelInitializer<NioSocketChannel>() {
                 @Override
-                protected void initChannel(NioSocketChannel nioSocketChannel) throws Exception {
+                protected void initChannel(NioSocketChannel nioSocketChannel) {
                     ChannelPipeline pipeline = nioSocketChannel.pipeline();
 
-                    pipeline.addLast("protocolDecode", new OrderProtocolDecoder());
-                    pipeline.addLast("protocolEncode", new OrderProtocolEncoder());
+                    pipeline.addLast(new OrderProtocolDecoder());
+                    pipeline.addLast(new OrderProtocolEncoder());
 
                     pipeline.addLast(new OrderFrameDecoder());
                     pipeline.addLast(new OrderFrameEncoder());
