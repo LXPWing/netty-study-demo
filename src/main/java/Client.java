@@ -36,8 +36,9 @@ public class Client {
             ChannelFuture channelFuture = bootstrap.connect("127.0.0.1", 8090);
             channelFuture.sync();
 
-            RequestMessage requestMessage = new RequestMessage(IdUtil.nextId(), new OrderOperation(1001, "tudo"));
-            channelFuture.channel().writeAndFlush(requestMessage);
+            OrderOperation orderOperation = new OrderOperation(1001, "tudou");
+
+            channelFuture.channel().writeAndFlush(orderOperation);
 
             channelFuture.channel().closeFuture().sync();
         } catch (InterruptedException e) {

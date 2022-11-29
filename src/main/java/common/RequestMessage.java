@@ -1,8 +1,6 @@
 package common;
 
 public class RequestMessage extends Message<Operation> {
-    public RequestMessage() {
-    }
 
     public RequestMessage(Long streamId, Operation operation) {
         MessageHeader messageHeader = new MessageHeader();

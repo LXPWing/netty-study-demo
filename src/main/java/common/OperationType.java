@@ -60,5 +60,4 @@ public enum OperationType {
     public Class<? extends OperationResult> getOperationResultClazz() {
         return operationResultClazz;
     }
-
 }
